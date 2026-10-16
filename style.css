@@ -1,0 +1,317 @@
+/* =========================================================
+   Innova Space - style.css (hasil Day 1)
+   Isi file:
+   1. Reset        2. Variabel warna   3. Dasar
+   4. Navbar       5. Hero             6. About
+   7. Langganan + Card                 8. Footer
+   9. Responsif (mobile)
+   ========================================================= */
+
+/* 1. Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Variabel warna */
+:root {
+  --primary-color: #2E2A26;
+  --accent-color: #C97B4A;
+  --bg-color: #FFFFFF;
+  --card-bg: #FBF4EE;
+  --muted-color: #6B645C;
+}
+
+/* 3. Dasar */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background-color: var(--accent-color);
+  color: #1F1B18;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* 4. Navbar */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--bg-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  white-space: nowrap;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 5. Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  min-height: 70vh;
+  padding: 80px 24px;
+  text-align: center;
+  color: #FFFFFF;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(201, 123, 74, 0.35), transparent 45%),
+    linear-gradient(135deg, #1B1816 0%, #2E2A26 55%, #4A3A2E 100%);
+}
+
+.hero h1 {
+  font-size: 56px;
+  line-height: 1.1;
+}
+
+.hero p {
+  max-width: 480px;
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: #E9E2DB;
+}
+
+/* 6. About */
+.about {
+  padding: 80px 24px;
+  text-align: center;
+  background-color: #1F1C1A;
+  color: #EFE9E3;
+}
+
+.about h2 {
+  margin-bottom: 16px;
+  font-size: 32px;
+}
+
+.about p {
+  max-width: 720px;
+  margin: 0 auto 12px;
+  color: #D6CEC6;
+}
+
+/* 7. Langganan + Card */
+.subscription {
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.subscription-title {
+  max-width: 640px;
+  margin: 0 auto 8px;
+  font-size: 32px;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.section-label {
+  font-weight: 500;
+  color: var(--muted-color);
+}
+
+.card-container {
+  display: flex;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 24px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+}
+
+.card h3 {
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 15px;
+  color: var(--muted-color);
+}
+
+.card .price {
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* 8. Footer */
+.footer {
+  padding: 40px 24px 24px;
+  background-color: var(--card-bg);
+  transition: background-color 0.3s ease;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-brand .logo {
+  margin-bottom: 8px;
+}
+
+.footer-brand p {
+  color: var(--muted-color);
+}
+
+.footer-contact {
+  list-style: none;
+  text-align: right;
+}
+
+.copyright {
+  max-width: 1100px;
+  margin: 24px auto 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(128, 128, 128, 0.25);
+  font-size: 14px;
+  color: var(--muted-color);
+}
+
+/* 9. Responsif (mobile) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    padding: 12px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    font-size: 14px;
+  }
+
+  .hero {
+    min-height: 60vh;
+    padding: 64px 16px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .about,
+  .subscription {
+    padding: 56px 16px;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-contact {
+    text-align: left;
+  }
+}
+
+/* Aksesibilitas: hormati pengguna yang mematikan animasi (tidak perlu diubah) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
+
+/* =========================================================
+   DAY 2: tulis kode CSS barumu di bawah garis ini
+   ========================================================= */

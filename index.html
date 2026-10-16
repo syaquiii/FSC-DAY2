@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innova Space</title>
+
+  <!-- Font Poppins dari Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- script.js sudah terhubung. "defer" artinya dijalankan setelah HTML selesai dimuat -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar" aria-label="Menu utama">
+      <a href="#beranda" class="logo">
+        <img src="assets/logo.svg" alt="Logo Innova Space" width="32" height="32">
+        <span>Innova Space</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#langganan">Langganan</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- TODO Day 2 (Requirement 1 dan 3): tambahkan tombol hamburger dan tombol dark mode di sini -->
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <h1>Innova Space</h1>
+      <p>Find your space and innovate</p>
+      <a href="#langganan" class="btn">Lihat Paket</a>
+    </section>
+
+    <section class="about" id="tentang">
+      <h2>Tentang Kami</h2>
+      <p>Innova Space adalah ruang kerja bersama untuk mahasiswa, kreator, dan tim startup yang ingin tumbuh. Kami menyediakan ruang yang nyaman, internet cepat, dan komunitas yang saling mendukung agar idemu bisa jadi karya nyata.</p>
+      <p>Setiap bulan ada sesi mentoring, diskusi komunitas, dan event kolaborasi yang terbuka untuk semua anggota.</p>
+    </section>
+
+    <section class="subscription" id="langganan">
+      <h2 class="subscription-title">Be a part of innovation. Join Innova Space now!</h2>
+      <p class="section-label">Subscription</p>
+
+      <div class="card-container">
+        <article class="card">
+          <img src="assets/icon-weekly.svg" alt="Ikon paket mingguan" width="48" height="48">
+          <h3>Weekly Premium</h3>
+          <p>Cocok untuk mencoba suasana Innova Space. Akses ruang kerja, internet cepat, dan area diskusi selama 7 hari.</p>
+          <p class="price">Rp 75.000 / minggu</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/icon-monthly.svg" alt="Ikon paket bulanan" width="48" height="48">
+          <h3>Monthly Premium</h3>
+          <p>Pilihan untuk produktivitas rutin. Akses penuh ruang kerja ditambah sesi mentoring setiap bulan.</p>
+          <p class="price">Rp 250.000 / bulan</p>
+        </article>
+
+        <article class="card">
+          <img src="assets/icon-annual.svg" alt="Ikon paket tahunan" width="48" height="48">
+          <h3>Annual Premium</h3>
+          <p>Paling hemat untuk komunitas jangka panjang. Akses penuh, mentoring prioritas, dan undangan event eksklusif.</p>
+          <p class="price">Rp 2.400.000 / tahun</p>
+        </article>
+      </div>
+
+      <a href="#kontak" class="btn">Langganan Sekarang</a>
+    </section>
+  </main>
+
+  <footer class="footer" id="kontak">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <img src="assets/logo.svg" alt="Logo Innova Space" width="32" height="32">
+          <span>Innova Space</span>
+        </div>
+        <p>Find your space and innovate</p>
+      </div>
+
+      <ul class="footer-contact">
+        <li>@innova_space</li>
+        <li>0812-0000-0000</li>
+        <li>hello@innovaspace.example</li>
+      </ul>
+    </div>
+    <p class="copyright">Website latihan Frontend Starter Camp 2026, Basic Computing Community FILKOM UB. Innova Space adalah brand fiktif.</p>
+  </footer>
+
+</body>
+</html>
