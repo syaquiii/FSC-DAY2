@@ -282,7 +282,7 @@ hamburger.addEventListener("click", function () {
 
 **Cek hasil:**
 
-- Tombol berbentuk kapsul dengan garis tepi warna tembaga muncul di navbar.
+- Tombol berbentuk kapsul dengan garis tepi berwarna aksen (`--accent-color`) muncul di navbar.
 - Di desktop: tombol berada di kanan, sejajar dengan logo dan menu.
 - Di mobile: logo di kiri, tombol Dark Mode dan hamburger di kanan, semuanya satu baris.
 - Arahkan kursor ke tombol: warnanya terisi.
@@ -380,7 +380,7 @@ Tambahkan di paling bawah `style.css`:
 **Cek hasil:**
 
 - Latar halaman, navbar, kartu, dan footer berubah gelap. Teks berubah terang.
-- Bagian hero dan Tentang Kami memang sudah gelap sejak awal (warnanya tidak memakai variabel), jadi tidak terlihat berubah. Itu disengaja.
+- Bagian hero dan Tentang Kami tidak ikut berubah, karena warnanya ditulis langsung (hex), bukan lewat variabel. Itu disengaja. Di tema bawaan keduanya memang sudah gelap, jadi perubahannya tidak terlihat. Kalau kamu mengubah warna hero atau Tentang Kami menjadi terang, kedua bagian itu akan tetap terang saat dark mode aktif.
 - Klik lagi: semuanya kembali terang.
 - Di tampilan mobile, menu hamburger yang terbuka ikut menjadi gelap.
 - Di DevTools tab **Elements**, `<body>` mendapat dan kehilangan `class="dark"` bergantian.
@@ -485,7 +485,7 @@ Ada empat link di menu, jadi kamu butuh `querySelectorAll` (bukan `querySelector
 <details>
 <summary>Kode</summary>
 
-Tambahkan di bawah kode Requirement 2 (variabel `navLinks` sudah ada di atas):
+Tambahkan di bawah kode Requirement 2 (variabel `hamburger` dan `navLinks` sudah ada di atas):
 
 ```js
 const menuLinks = document.querySelectorAll(".nav-links a");
@@ -493,9 +493,12 @@ const menuLinks = document.querySelectorAll(".nav-links a");
 menuLinks.forEach(function (link) {
   link.addEventListener("click", function () {
     navLinks.classList.remove("open");
+    hamburger.setAttribute("aria-expanded", "false");
   });
 });
 ```
+
+Baris `setAttribute` menjaga nilai `aria-expanded` tetap sesuai. Tanpa baris itu, kalau kamu juga mengerjakan Tantangan 3, menu sudah tertutup tetapi `aria-expanded` masih `"true"`. Kalau belum mengerjakan Tantangan 3, baris ini tidak merugikan.
 
 </details>
 
@@ -601,7 +604,7 @@ darkToggle.addEventListener("click", function () {
 
 ## Lampiran: Panduan checklist Time to Code Day 1
 
-Project ini sudah berisi hasil lengkap dari checklist Day 1. Lampiran ini untuk kamu yang belum selesai di Day 1, atau ingin tahu cara membuat halaman ini dari nol. Semua kode di bawah diambil langsung dari `index.html` dan `style.css` di project ini.
+Project ini sudah berisi hasil lengkap dari checklist Day 1. Lampiran ini untuk kamu yang belum selesai di Day 1, atau ingin tahu cara membuat halaman ini dari nol. Kode di bawah diambil dari `index.html` dan `style.css` di project ini, dengan beberapa bagian disederhanakan (misalnya aturan `.header` dan `.logo` pada navbar tidak ditulis ulang). Kalau ada perbedaan kecil dengan file aslinya, file di project inilah yang dipakai.
 
 ### Day 1, Checklist 1: Struktur file HTML5 dan tag semantik
 
