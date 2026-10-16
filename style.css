@@ -1,26 +1,18 @@
-/* =========================================================
-   Innova Space - style.css (hasil Day 1)
-   Isi file:
-   1. Reset        2. Variabel warna   3. Dasar
-   4. Navbar       5. Hero             6. About
-   7. Langganan + Card                 8. Footer
-   9. Responsif (mobile)
-   ========================================================= */
-
-/* 1. Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 2. Variabel warna */
+/* 2. Variabel warna (palet biru soft krayon) */
 :root {
-  --primary-color: #2E2A26;
-  --accent-color: #C97B4A;
-  --bg-color: #FFFFFF;
-  --card-bg: #FBF4EE;
-  --muted-color: #6B645C;
+  --primary-color: #25395C;
+  --accent-color: #7DB4E8;
+  --accent-strong: #3F7FC4;
+  --bg-color: #F6FAFE;
+  --card-bg: #E3EFFB;
+  --border-color: #BCD7F1;
+  --muted-color: #5B7191;
 }
 
 /* 3. Dasar */
@@ -40,7 +32,7 @@ body {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid var(--accent-color);
+  outline: 3px solid var(--accent-strong);
   outline-offset: 3px;
 }
 
@@ -48,15 +40,18 @@ button:focus-visible {
   display: inline-block;
   padding: 12px 28px;
   background-color: var(--accent-color);
-  color: #1F1B18;
+  color: #1B2D4D;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  border: 2px solid var(--accent-strong);
+  border-radius: 12px;
+  box-shadow: 3px 3px 0 var(--accent-strong);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
   transform: translateY(-2px);
+  box-shadow: 5px 5px 0 var(--accent-strong);
 }
 
 /* 4. Navbar */
@@ -65,7 +60,8 @@ button:focus-visible {
   top: 0;
   z-index: 100;
   background-color: var(--bg-color);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(63, 127, 196, 0.15);
+  border-bottom: 2px solid var(--border-color);
   transition: background-color 0.3s ease;
 }
 
@@ -103,7 +99,7 @@ button:focus-visible {
 }
 
 .nav-links a:hover {
-  color: var(--accent-color);
+  color: var(--accent-strong);
 }
 
 .nav-actions {
@@ -122,10 +118,9 @@ button:focus-visible {
   min-height: 70vh;
   padding: 80px 24px;
   text-align: center;
-  color: #FFFFFF;
-  background:
-    radial-gradient(circle at 80% 20%, rgba(201, 123, 74, 0.35), transparent 45%),
-    linear-gradient(135deg, #1B1816 0%, #2E2A26 55%, #4A3A2E 100%);
+  background-color: #A9D0F5;
+  background-image: linear-gradient(160deg, #C4E0FA 0%, #A9D0F5 55%, #8FC0F0 100%);
+  color: #1B2D4D;
 }
 
 .hero h1 {
@@ -137,15 +132,15 @@ button:focus-visible {
   max-width: 480px;
   margin-bottom: 8px;
   font-size: 20px;
-  color: #E9E2DB;
+  color: #2F4A75;
 }
 
 /* 6. About */
 .about {
   padding: 80px 24px;
   text-align: center;
-  background-color: #1F1C1A;
-  color: #EFE9E3;
+  background-color: #D4E6F8;
+  color: #1F3358;
 }
 
 .about h2 {
@@ -156,7 +151,7 @@ button:focus-visible {
 .about p {
   max-width: 720px;
   margin: 0 auto 12px;
-  color: #D6CEC6;
+  color: #34507C;
 }
 
 /* 7. Langganan + Card */
@@ -193,14 +188,15 @@ button:focus-visible {
   gap: 12px;
   padding: 32px 24px;
   background-color: var(--card-bg);
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(63, 127, 196, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 14px 28px rgba(63, 127, 196, 0.28);
 }
 
 .card h3 {
@@ -222,6 +218,7 @@ button:focus-visible {
 .footer {
   padding: 40px 24px 24px;
   background-color: var(--card-bg);
+  border-top: 2px solid var(--border-color);
   transition: background-color 0.3s ease;
 }
 
@@ -251,7 +248,7 @@ button:focus-visible {
   max-width: 1100px;
   margin: 24px auto 0;
   padding-top: 16px;
-  border-top: 1px solid rgba(128, 128, 128, 0.25);
+  border-top: 1px solid var(--border-color);
   font-size: 14px;
   color: var(--muted-color);
 }
@@ -315,3 +312,12 @@ button:focus-visible {
 /* =========================================================
    DAY 2: tulis kode CSS barumu di bawah garis ini
    ========================================================= */
+
+
+.logo img,
+.logo svg,
+.logo i,
+.logo-icon {
+  filter: hue-rotate(180deg) saturate(1.4) brightness(1.1);
+  border-radius: 8px;
+}
