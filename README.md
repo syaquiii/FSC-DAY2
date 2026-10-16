@@ -211,7 +211,7 @@ Tulis di paling bawah `style.css`:
 | Gejala | Penyebab | Solusi |
 |---|---|---|
 | Console: `Cannot read properties of null (reading 'addEventListener')` | `querySelector` tidak menemukan elemen. Selector salah ketik, atau tombol hamburger belum ada di HTML | Cek tulisan `".hamburger"` (pakai titik) dan pastikan Requirement 1 sudah selesai |
-| Menu tidak berubah, class `open` juga tidak muncul | Penulisan `toggle(".open")` memakai titik | Di `classList`, tulis nama class **tanpa titik**: `toggle("open")` |
+| Menu tidak berubah. Di DevTools yang muncul class bernama `.open` (ada titiknya), bukan `open` | Penulisan `toggle(".open")` memakai titik | Di `classList`, tulis nama class **tanpa titik**: `toggle("open")` |
 | Class `open` muncul di DevTools tapi menu tidak tampil | Aturan CSS `.nav-links.open` belum ditulis atau salah ketik | Cek langkah 1 |
 | Tidak ada reaksi sama sekali | `script.js` tidak terbaca | Pastikan pesan "script.js terhubung" muncul di Console |
 | Menu terbuka lalu langsung tertutup | Listener yang sama tertulis dua kali, sehingga `toggle` jalan dua kali | Hapus salah satunya |
@@ -292,9 +292,9 @@ hamburger.addEventListener("click", function () {
 | Gejala | Penyebab | Solusi |
 |---|---|---|
 | Font tombol berbeda dari halaman | Lupa `font-family: inherit` | Tambahkan pada `.dark-toggle` |
-| Tombol turun ke baris kedua di mobile | Padding dan ukuran font belum dikecilkan di media query, atau `flex-wrap: nowrap` dari Requirement 1 belum ada | Cek langkah 4 dan Requirement 1 |
+| Di layar sempit (sekitar 320px) tombol turun ke baris kedua, atau halaman bisa digeser ke samping | Turun ke baris kedua: `flex-wrap: nowrap` dari Requirement 1 belum ada. Bisa digeser ke samping: padding dan ukuran font belum dikecilkan di media query. Di lebar 375px keduanya biasanya belum terlihat, jadi tes juga di 320px | Cek langkah 4 dan Requirement 1 |
 | Teks tombol tidak terbaca saat dark mode nanti | Warna ditulis hex tetap (misalnya `#000`) | Pakai `var(--primary-color)` |
-| Tombol tampil di atas hamburger, bukan di sebelahnya | Tombol diletakkan di luar `.nav-actions` | Pindahkan ke dalam `<div class="nav-actions">` |
+| Tombol tidak menempel di sebelah hamburger (jaraknya lebih lebar, di desktop tombol melayang di antara menu dan pojok kanan) | Tombol diletakkan di dalam `<nav>` tetapi di luar `.nav-actions` | Pindahkan ke dalam `<div class="nav-actions">` |
 
 <details>
 <summary>Hint 1: arah berpikir</summary>
@@ -389,10 +389,10 @@ Tambahkan di paling bawah `style.css`:
 
 | Gejala | Penyebab | Solusi |
 |---|---|---|
-| Tombol diklik, class `dark` muncul, tapi tampilan tidak berubah | Selector salah: `.dark`, `body .dark` (dengan spasi), atau `.body.dark` | Tulis `body.dark` tanpa spasi |
+| Tombol diklik, class `dark` muncul, tapi tampilan tidak berubah | Selector salah: `body .dark` (dengan spasi, artinya elemen `.dark` di dalam `body`) atau `.body.dark` | Tulis `body.dark` tanpa spasi |
 | Sebagian warna tidak berubah | Nama variabel salah ketik, atau bagian itu memakai warna hex tetap | Samakan nama variabel dengan `:root`; pakai `var(...)` untuk warna |
 | Console: `Cannot read properties of null` | `.dark-toggle` tidak ditemukan | Pastikan tombol sudah ada di HTML (Requirement 3) dan namanya sama |
-| Tombol harus diklik dua kali untuk bereaksi | Listener terpasang dua kali | Hapus salah satu |
+| Tombol diklik tetapi class `dark` tidak pernah muncul, tanpa error | Listener terpasang dua kali, sehingga `toggle` jalan dua kali per klik dan saling membatalkan | Hapus salah satu |
 
 <details>
 <summary>Hint 1: arah berpikir</summary>
